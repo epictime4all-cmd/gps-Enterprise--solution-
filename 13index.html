@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
 <title>GPS Enterprise Global Solution - GPT-5 AI Platform</title>
 <style>
   body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
-  header { background:#003366; color:#fff; padding:15px; text-align:center; position:sticky; top:0; z-index:100; }
+  header { background:#003366; color:#fff; padding:15px; text-align:center; }
   h1 { margin:0; font-size:24px; }
   main { padding:20px; }
   .dashboard { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
@@ -31,7 +32,6 @@
 
 <main>
   <div class="dashboard">
-    <!-- AI Modules -->
     <div class="card">
       <h2>Chat AI</h2>
       <button onclick="startChat()">Start Chat</button>
@@ -69,7 +69,6 @@
     </div>
   </div>
 
-  <!-- Financial Hub -->
   <div class="financial-hub">
     <h2>Global Financial Hub</h2>
     <div class="link-list">
@@ -109,10 +108,10 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  // GPT-5 API placeholder (do not hardcode secret key)
-  // const GPT5_API_KEY = process.env.GPT5_API_KEY;
+  // GPT-5 API placeholder (Vercel environment variable)
+  const GPT5_API_KEY = import.meta.env.VITE_GPT5_API_KEY;
 
-  // AI Module Functions
+  // AI functions
   function startChat() { document.getElementById('chat-status').innerText="Chat AI started"; alert("Chat AI is live!"); }
   function startVoice() { document.getElementById('voice-status').innerText="Voice AI started"; alert("Voice AI is live!"); }
   function sendText() { document.getElementById('text-status').innerText="Text AI sent"; alert("Text AI sent!"); }
