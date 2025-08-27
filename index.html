@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +75,7 @@
       <a href="#" target="_blank">Stock Market Live</a>
       <a href="#" target="_blank">Forex Market Live</a>
       <a href="#" target="_blank">Cryptocurrency Live</a>
-      <a href="#" target="_blank">Commodities Live</a>
+      <a href="#" target="_blank">Hedge Fund Insights</a>
       <a href="#" target="_blank">Financial News Hub</a>
     </div>
 
@@ -107,7 +108,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  // GPT-5 API integration using Vercel environment variable
+  // GPT-5 API Integration (Vercel environment variable)
   const GPT5_API_KEY = import.meta.env.VITE_GPT5_API_KEY;
 
   // AI functions
@@ -125,7 +126,7 @@
     const currency = document.getElementById('quoteCurrency').value;
     if(isNaN(amount)) { alert("Enter a valid number"); return; }
     let result = 0;
-    switch(currency) {
+    switch(currency){
       case "USD": result = amount * 1.0; break;
       case "EUR": result = amount * 0.93; break;
       case "GBP": result = amount * 0.81; break;
@@ -133,17 +134,11 @@
     document.getElementById('quoteResult').innerText=`Converted Amount: ${result.toFixed(2)} ${currency}`;
   }
 
-  // Chart.js dynamic simulation
+  // Chart.js simulation
   const stockCtx = document.getElementById('stockChart').getContext('2d');
   const forexCtx = document.getElementById('forexChart').getContext('2d');
   const cryptoCtx = document.getElementById('cryptoChart').getContext('2d');
-
   function randomData() { return Array.from({length:10}, ()=>Math.floor(Math.random()*100)); }
-
-  const stockChart = new Chart(stockCtx, { type:'line', data:{labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"], datasets:[{label:"Stock Index", data:randomData(), borderColor:'rgba(255,99,132,1)', backgroundColor:'rgba(255,99,132,0.2)'}] }, options:{} });
-  const forexChart = new Chart(forexCtx, { type:'line', data:{labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"], datasets:[{label:"Forex Rates", data:randomData(), borderColor:'rgba(54,162,235,1)', backgroundColor:'rgba(54,162,235,0.2)'}] }, options:{} });
-  const cryptoChart = new Chart(cryptoCtx, { type:'line', data:{labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"], datasets:[{label:"Crypto Prices", data:randomData(), borderColor:'rgba(255,206,86,1)', backgroundColor:'rgba(255,206,86,0.2)'}] }, options:{} });
-</script>
-
-</body>
-</html>
+  const stockChart = new Chart(stockCtx,{ type:'line', data:{labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"], datasets:[{label:"Stock Index", data:randomData(), borderColor:'rgba(255,99,132,1)', backgroundColor:'rgba(255,99,132,0.2)'}] }, options:{} });
+  const forexChart = new Chart(forexCtx,{ type:'line', data:{labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"], datasets:[{label:"Forex Rates", data:randomData(), borderColor:'rgba(54,162,235,1)', backgroundColor:'rgba(54,162,235,0.2)'}] }, options:{} });
+  const cryptoChart = new Chart(cryptoCtx,{ type:'line', data:{labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun
