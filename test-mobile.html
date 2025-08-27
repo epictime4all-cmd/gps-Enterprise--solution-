@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPS Enterprise Live Test</title>
+<!-- Chart.js CDN for graphs -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f2f2f2; }
+header { background:#003366; color:#fff; padding:15px; text-align:center; font-size:1.3em; }
+section { padding:15px; }
+.module { background:#fff; margin:10px 0; padding:15px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+button { padding:10px 15px; margin-top:5px; border:none; border-radius:5px; background:#003366; color:#fff; cursor:pointer; }
+button:hover { background:#0055aa; }
+footer { background:#003366; color:#fff; text-align:center; padding:10px; font-size:0.8em; margin-top:20px;}
+input, select { padding:8px; margin-top:5px; width:100%; box-sizing:border-box; border-radius:5px; border:1px solid #ccc; }
+</style>
+</head>
+<body>
+
+<header>
+GPS Enterprise Live Test – Interactive Dashboard
+</header>
+
+<section class="module">
+<h2>Live Chat AI</h2>
+<input type="text" id="chatInput" placeholder="Type your message">
+<button onclick="simulateChat()">Send</button>
+<p id="chatOutput">Waiting for input...</p>
+</section>
+
+<section class="module">
+<h2>Voice AI (Simulated)</h2>
+<button onclick="simulateVoice()">Talk to AI</button>
+<p id="voiceOutput">Idle...</p>
+</section>
+
+<section class="module">
+<h2>Financial Hub (Live Placeholder)</h2>
+<canvas id="financialChart" width="400" height="200"></canvas>
+<p>Enter investment amount:</p>
+<input type="number" id="investAmount" placeholder="e.g., 1000">
+<button onclick="simulateFinance()">Calculate ROI</button>
+<p id="financeOutput">Results will appear here.</p>
+</section>
+
+<section class="module">
+<h2>CRM & RAG Tool</h2>
+<button onclick="simulateCRM()">Simulate Prospect Interaction</button>
+<p id="crmOutput">Idle...</p>
+</section>
+
+<section class="module">
+<h2>Quote / Code Generator</h2>
+<input type="text" id="quoteInput" placeholder="Enter data">
+<button onclick="simulateQuote()">Generate Quote / Code</button>
+<p id="quoteOutput">Waiting...</p>
+</section>
+
+<section class="module">
+<h2>Social Media Integration (Simulated)</h2>
+<button onclick="simulateSocial()">Interact with Social Channels</button>
+<p id="socialOutput">Idle...</p>
+</section>
+
+<footer>
+© 2025 GPS Enterprise. NDA Protected. All rights reserved. Strictly prohibited to copy or redistribute.
+</footer>
+
+<script>
+// Simulated AI Chat
+function simulateChat() {
+  const input = document.getElementById('chatInput').value;
+  document.getElementById('chatOutput').innerText = "AI Response to: '" + input + "'";
+}
+
+// Simulated Voice AI
+function simulateVoice() {
+  document.getElementById('voiceOutput').innerText = "AI is speaking... Hello! How can I assist you today?";
+}
+
+// Simulated Finance Chart
+const ctx = document.getElementById('financialChart').getContext('2d');
+const financialChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+    datasets: [{
+      label: 'Portfolio Value',
+      data: [1000,1200,1150,1300,1250,1400],
+      backgroundColor:'rgba(0,102,204,0.2)',
+      borderColor:'rgba(0,102,204,1)',
+      borderWidth:2
+    }]
+  },
+  options: { responsive:true, maintainAspectRatio:false }
+});
+function simulateFinance() {
+  const amount = document.getElementById('investAmount').value || 0;
+  const result = (amount * (1 + Math.random()*0.1)).toFixed(2);
+  document.getElementById('financeOutput').innerText = "Estimated ROI: $" + result;
+}
+
+// Simulated CRM
+function simulateCRM() {
+  document.getElementById('crmOutput').innerText = "AI is following up with prospect... Interaction complete.";
+}
+
+// Simulated Quote
+function simulateQuote() {
+  const input = document.getElementById('quoteInput').value;
+  const code = "CODE-" + Math.floor(Math.random()*100000);
+  document.getElementById('quoteOutput').innerText = "Generated: " + input + " → " + code;
+}
+
+// Simulated Social Media
+function simulateSocial() {
+  document.getElementById('socialOutput').innerText = "AI posted updates and replied to comments on simulated channels.";
+}
+</script>
+
+</body>
+</html>
